@@ -231,7 +231,8 @@ gpu_command_collection = ["nvidia-smi topo -m","nvidia-smi","lspci -tv |grep 'NV
 ,"/usr/local/cuda/extras/demo_suite/bandwidthTest --memory=pinned --mode=range --start=65536 --end=65011712 --increment=4194304 --device=all --dtoh"]
 PCIE_debugging_collection =  ["dmidecode", "performance_lspci", "lscpu", "mlxlink / mstlink","mst_commands_query_output","dmesg" ]
 ib_collection = []
-commands_collection = ["ip -s -s link show", "ip -s -s addr show", "ovs-vsctl --version", "ovs-vsctl show", "ovs-dpctl show", "brctl --version", "brctl show", "mlxmcg -d", "arp -an", "free", "blkid -c /dev/null | sort", "date", "time", \
+commands_collection = [ "ipmitool fru", "ipmitool sensor", "ipmitool lan print", "lshw", "nvme list", "sensors", \
+                        "ip -s -s link show", "ip -s -s addr show", "ovs-vsctl --version", "ovs-vsctl show", "ovs-dpctl show", "brctl --version", "brctl show", "mlxmcg -d", "arp -an", "free", "blkid -c /dev/null | sort", "date", "time", \
                         "df -lh", "/opt/mellanox/ethtool/sbin/ethtool --version", "ethtool_version", "ethtool_all_interfaces", "fdisk -l", "hostname", "ibdev2netdev", "ibdev2pcidev", "ibv_devinfo -v", "ifconfig -a", \
                         "initctl list", "ip m s", "ip n s", "iscsiadm --version", "iscsiadm -m host", "iscsiadm -m iface", "iscsiadm -m node", "iscsiadm -m session", "lscpu", "lsmod",  "lspci -tv", "lspci -vv", \
                         "mount", "mst_commands_query_output", "asap_parameters", "asap_tc_information","rdma_tool",  "netstat -i", "netstat -nlp", "netstat -nr", "netstat -s", "numactl --hardware", "ofed_info", "ofed_info -s", "ompi_info",  "ip route show table all", "service --status-all", \
